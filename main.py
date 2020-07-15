@@ -58,7 +58,7 @@ def train(**kwargs):
             optimizer.step()
 
         mean_loss = total_loss / len(train_data)
-        print(f"\tloss: {mean_loss}")
+        print(f"\tloss: {mean_loss:.6f}")
         test(model, test_dataloader)
 
 
@@ -89,7 +89,7 @@ def test(model, test_dataloader):
         ndcg_list = [np.mean(np.hstack(r)) for r in ndcg_list]
 
     for i, k in enumerate(opt.top_k):
-        print(f"\tRecall@{k}: {recall_list[i]}, ndcg@{k}: {ndcg_list[i]}")
+        print(f"\tRecall@{k}: {recall_list[i]:.6f}, ndcg@{k}: {ndcg_list[i]:.6f}")
 
     model.train()
 
