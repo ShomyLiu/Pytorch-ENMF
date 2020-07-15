@@ -4,7 +4,7 @@ This repo reproduces the paper with Pytorch:
 
 >Chong Chen, Min Zhang, Yongfeng Zhang, Yiqun Liu and Shaoping Ma. 2020. Efficient Neural Matrix Factorization without Sampling for Recommendation. In TOIS Vol. 38, No. 2, Article 14.
 
-According to their origin tensorflow-based implementation: [ENMF](https://github.com/chenchongthu/ENMF)(thanks for the nice work), we implement the user-based ENMF (denoted as ENMF-U in the paper).
+According to their origin tensorflow-based implementation: [ENMF](https://github.com/chenchongthu/ENMF) (thanks for the nice work), we implement the user-based ENMF (denoted as ENMF-U in the paper).
 
 ### Environment
 - python 3.6+
@@ -13,16 +13,16 @@ According to their origin tensorflow-based implementation: [ENMF](https://github
 
 ### run
 
-- First pre-processe the dataset:
+- First pre-processe the dataset, then some npy files would be in the `data/ml-1m/`:
 ```
 cd pro_data
 python3 data_pro.py
 ```
-- Run the main for training and testing:
+- Run the main.py for training and testing:
 ```
 python3 main.py train
 ```
-- an output sample:
+- An output sample:
 ```
 2020-07-15 14:03:26 Epoch 93:
         loss: -123.066313
