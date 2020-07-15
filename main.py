@@ -26,14 +26,14 @@ def collate_fn(batch):
 
 def train(**kwargs):
 
+    opt.parse(kwargs)
     random.seed(opt.seed)
     np.random.seed(opt.seed)
     torch.manual_seed(opt.seed)
     torch.cuda.manual_seed_all(opt.seed)
-
-    opt.parse(kwargs)
     torch.cuda.set_device(opt.gpu_id)
 
+    print(f"init model and load data...")
     model = ENMF(opt).cuda()
 
     train_data = RecData("Train")
@@ -45,7 +45,6 @@ def train(**kwargs):
     optimizer = optim.Adagrad(model.parameters(), opt.lr)
 
     print("start traning..")
-
     for epoch in range(opt.epochs):
         total_loss = 0.0
         print(f"{now()} Epoch {epoch}:")

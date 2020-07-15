@@ -15,7 +15,7 @@ class DefaultConfig:
     gpu_ids = []
 
     seed = 2019
-    epochs = 500
+    epochs = 200
     num_workers = 0
 
     weight_decay = 1e-3  # optimizer rameteri
@@ -35,7 +35,6 @@ class DefaultConfig:
         '''
         user can update the default hyperparamter
         '''
-
         self.train_matrix = np.load(f"{self.dataset}/train_matrix.npy", allow_pickle=True).tolist()
         self.test_matrix = np.load(f"{self.dataset}/test_matrix.npy", allow_pickle=True).tolist()
         for k, v in kwargs.items():
