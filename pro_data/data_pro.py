@@ -28,6 +28,9 @@ if __name__ == '__main__':
     tp_test = load_data(os.path.join(data_root, 'ml.test.txt'))
     save_folder = '../data/ml-1m'
 
+    if not os.path.exists(save_folder):
+        os.makedirs(save_folder)
+
     tp_all = tp_train.append(tp_test)
     user_num, item_num = get_count(tp_all)
     print(f"user number: {user_num}, item_number: {item_num}")
